@@ -1,11 +1,11 @@
 .content{
-    position: fixed;
+    position: absolute;
     top: 18px;
     right: 160px;
     z-index: 999;
     cursor: pointer;
-    opacity: 1;
+    
 }
-.content :hover{
-    opacity: .5;
+#zappull:hover{
+    transform: scale(1.1);
 }

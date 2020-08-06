@@ -1,49 +1,49 @@
+const icon = `<img  class="content" id="zappull" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABHpJREFUSImdlG1M1XUUxz/nf/88yeVy4V5AWIoGKDiU8gkXFtS0F2nWLNN0PbCItvJdPjRdWatcW2qvnLWpORcrXzinbuJymjrUMgUFacvxEKIIci8XuddA4P5PL6A7rvdiD+fVOed/zvf7+/7+5/yEh5jP58sOim2lomWiOgtIBVGgA2gVqB4WPZzhdLaMhyHRkl6v9xE1zK3AasA29puiSHibBXwfFN2S4XQ2/yOBt7f3JVXZDTiDGuRydy2XPBdp6WvBM+ABICkmieykbB5zPU7JxBISbAmgDCC8405J3j8uQXdvb6Wo7AKMK946qpqq6O7vHk89AIlmIisefYXSrFJkRNvHrpTkTyIIunvuLhHhsKK2A80HON5e/VDgB60kYyHl08sxDROQcneKY1+IoK+vzz0Y1EYg/YfmAxxvP/afwMeSVBRUINAfFAoznM4WA2AwqB8C6Ve9V/4XuGmYTEzM5FxXDWc7zgKSYFP5CkB6e3tThi3psLDiP7i4kTv9d6KCFLoKccW5OdNxGoAYI5bK/LfJS85jwLrPrsadtAVuYI9JZNuCHcTb4i3LIN8IYixHiL/maxgXfF5aMetmrqN8WjnLp74MwJA1SFZiFs44J4daDtEWuAFAYOgeF7ouABg2i1cNVS0DqPfWRwWf457LezPe5e95WJa9lFhbLJX5lShwpO0Ijb5rYT1XvHUAKFJmChQq0BZoiwCfnlzA2sK1YbmjbUexVNnz+x6CGox6qDb/jVHPmmYo4h6RFogoXF/0ftjWnrj5IwdbD7Is+wW+fvIblmY/H5UgMOwfcVRcBowcwyZhLwK5SdMwjZhQ/NOt01Q1VbEmbw2Lsp5hwy/rWTLpOcoySyMITDFHHOG+AdwBSI1LCSuamjw5LP6uaT8V+RUsylrMxl83YDft2Awb3oGeCIK0+LRRBXSail4VZF6OI4/6noZQ0WVPLWtyXwvFu0v3hi5rW/F2RGx8e30vDb4GHrSc5NwRAQZ1hqDVAPPT54fdd89AD10DXaF47KMVa8Sx7/o+LnSejwAHKE4rHhGgHDP6A85qoDtzQiaz3XPCCjdf3ERXf1dYLqhBttd/yfnOmqjgOY4cClIKAPyGBo8IgKendxMinzf1NfFZ7acRTXbTzpy0ubQH2mjxt0YFBjANGx/N3sJkezaIbHU7HZtNABGxKXArcCtqY2A4wJnbp8cFBhCE1/PeYLI9G4VWhu5/ATA6TywGuBblh/0bM40Yyqe/SUnGQkD7DUtWu9LS/ACm1+t1KCyw1KK5r5kiVxEFzhlMdUzhXOd5znXWjLuxgjAzdRarcleRNSEL0H5VWeF2Jf8cqvH4+l4EPWSphaIRC+cf9FPnraU90I5nwEtQh0mKcTAlaQpFriLSE9JHyWixRFemOZ2XwtQh+iwKhhgACtoIclJFbgr6VlJsUv5TUbZ1jN1Gdeef95J3TJok/REqPb67JxT9A5VTVqztVIbdHppLVRWfz/+EJfo0kA+SJaipqAeR3yRITWqq46SIDI3H/hfsU7WM0gnUTgAAAABJRU5ErkJggg==">`;
 
 const getElement = setInterval(()=>{
-    const body = document.querySelector('body')
-    if(body){
-        clearInterval(getElement)
+    
+    if(!document.getElementById('zappull')){
 
-        const button = document.createElement("div")
-        button.addEventListener("click", getContacts)
-        button.innerHTML = `
-                                <img  class="content" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAACxAAAAsQHGLUmNAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAABHpJREFUSImdlG1M1XUUxz/nf/88yeVy4V5AWIoGKDiU8gkXFtS0F2nWLNN0PbCItvJdPjRdWatcW2qvnLWpORcrXzinbuJymjrUMgUFacvxEKIIci8XuddA4P5PL6A7rvdiD+fVOed/zvf7+/7+5/yEh5jP58sOim2lomWiOgtIBVGgA2gVqB4WPZzhdLaMhyHRkl6v9xE1zK3AasA29puiSHibBXwfFN2S4XQ2/yOBt7f3JVXZDTiDGuRydy2XPBdp6WvBM+ABICkmieykbB5zPU7JxBISbAmgDCC8405J3j8uQXdvb6Wo7AKMK946qpqq6O7vHk89AIlmIisefYXSrFJkRNvHrpTkTyIIunvuLhHhsKK2A80HON5e/VDgB60kYyHl08sxDROQcneKY1+IoK+vzz0Y1EYg/YfmAxxvP/afwMeSVBRUINAfFAoznM4WA2AwqB8C6Ve9V/4XuGmYTEzM5FxXDWc7zgKSYFP5CkB6e3tThi3psLDiP7i4kTv9d6KCFLoKccW5OdNxGoAYI5bK/LfJS85jwLrPrsadtAVuYI9JZNuCHcTb4i3LIN8IYixHiL/maxgXfF5aMetmrqN8WjnLp74MwJA1SFZiFs44J4daDtEWuAFAYOgeF7ouABg2i1cNVS0DqPfWRwWf457LezPe5e95WJa9lFhbLJX5lShwpO0Ijb5rYT1XvHUAKFJmChQq0BZoiwCfnlzA2sK1YbmjbUexVNnz+x6CGox6qDb/jVHPmmYo4h6RFogoXF/0ftjWnrj5IwdbD7Is+wW+fvIblmY/H5UgMOwfcVRcBowcwyZhLwK5SdMwjZhQ/NOt01Q1VbEmbw2Lsp5hwy/rWTLpOcoySyMITDFHHOG+AdwBSI1LCSuamjw5LP6uaT8V+RUsylrMxl83YDft2Awb3oGeCIK0+LRRBXSail4VZF6OI4/6noZQ0WVPLWtyXwvFu0v3hi5rW/F2RGx8e30vDb4GHrSc5NwRAQZ1hqDVAPPT54fdd89AD10DXaF47KMVa8Sx7/o+LnSejwAHKE4rHhGgHDP6A85qoDtzQiaz3XPCCjdf3ERXf1dYLqhBttd/yfnOmqjgOY4cClIKAPyGBo8IgKendxMinzf1NfFZ7acRTXbTzpy0ubQH2mjxt0YFBjANGx/N3sJkezaIbHU7HZtNABGxKXArcCtqY2A4wJnbp8cFBhCE1/PeYLI9G4VWhu5/ATA6TywGuBblh/0bM40Yyqe/SUnGQkD7DUtWu9LS/ACm1+t1KCyw1KK5r5kiVxEFzhlMdUzhXOd5znXWjLuxgjAzdRarcleRNSEL0H5VWeF2Jf8cqvH4+l4EPWSphaIRC+cf9FPnraU90I5nwEtQh0mKcTAlaQpFriLSE9JHyWixRFemOZ2XwtQh+iwKhhgACtoIclJFbgr6VlJsUv5TUbZ1jN1Gdeef95J3TJok/REqPb67JxT9A5VTVqztVIbdHppLVRWfz/+EJfo0kA+SJaipqAeR3yRITWqq46SIDI3H/hfsU7WM0gnUTgAAAABJRU5ErkJggg==">
-                            `
-        body.prepend(button)
-      
-    } 
-
-}, 1000)
-
-function getContacts(){
-    console.log('clicou')
-    const html = document.querySelector('._3xjAz span')
-    if(html){
-        console.log('html ', html);
-        const rgx = /title="(.*)"/g;
+        const body = document.querySelector('._2ruUq._3xjAz')
+        if(body){
+            
+            //clearInterval(getElement)
+            const button = document.createElement("div")
+            button.addEventListener("click", getContacts)
+            button.innerHTML = `${icon}`;        
+            body.prepend(button)            
         
-        const rgxTitle = / title="(.*)"/;
-         console.log(rgxTitle);
+        } 
+    }
 
-        const title =  rgxTitle.exec(html);
-        console.log(title);
+}, 2000)
+
+function getContacts(evt){
+
+    evt.preventDefault();    
+    const html = document.querySelector('._3xjAz span')
+
+    if(html){
+        
+        const inner = html.innerHTML;        
+        let text = inner.replace(/,\s/gi,"\n");        
+        text = text.replace(/\+55\s|\+|-/gi,"");        
+        copyToClipboard(text);        
+     
     }
     
 }
 
-/*
-<div class="PVMjB">
-    <div role="button" title="Pesquisar...">
-        <span data-testid="search-alt" data-icon="search-alt" class="">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z"></path></svg>
-        </span>
-    </div>
-    <span></span>
-</div>
+function copyToClipboard(text) {
 
-<svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-							<path d="M17.453,12.691V7.723 M17.453,12.691V7.723 M1.719,12.691V7.723 M18.281,12.691V7.723 M12.691,12.484H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,12.484,12.691,12.484M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555 M12.691,12.484H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,12.484,12.691,12.484 M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555 M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555M12.691,12.484H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,12.484,12.691,12.484 M7.309,13.312h5.383c0.229,0,0.414-0.187,0.414-0.414s-0.186-0.414-0.414-0.414H7.309c-0.228,0-0.414,0.187-0.414,0.414S7.081,13.312,7.309,13.312 M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555 M16.625,6.066h-1.449V3.168c0-0.228-0.186-0.414-0.414-0.414H5.238c-0.228,0-0.414,0.187-0.414,0.414v2.898H3.375c-0.913,0-1.656,0.743-1.656,1.656v4.969c0,0.913,0.743,1.656,1.656,1.656h1.449v2.484c0,0.228,0.187,0.414,0.414,0.414h9.523c0.229,0,0.414-0.187,0.414-0.414v-2.484h1.449c0.912,0,1.656-0.743,1.656-1.656V7.723C18.281,6.81,17.537,6.066,16.625,6.066 M5.652,3.582h8.695v2.484H5.652V3.582zM14.348,16.418H5.652v-4.969h8.695V16.418z M17.453,12.691c0,0.458-0.371,0.828-0.828,0.828h-1.449v-2.484c0-0.228-0.186-0.414-0.414-0.414H5.238c-0.228,0-0.414,0.186-0.414,0.414v2.484H3.375c-0.458,0-0.828-0.37-0.828-0.828V7.723c0-0.458,0.371-0.828,0.828-0.828h13.25c0.457,0,0.828,0.371,0.828,0.828V12.691z M7.309,13.312h5.383c0.229,0,0.414-0.187,0.414-0.414s-0.186-0.414-0.414-0.414H7.309c-0.228,0-0.414,0.187-0.414,0.414S7.081,13.312,7.309,13.312M7.309,15.383h5.383c0.229,0,0.414-0.187,0.414-0.414s-0.186-0.414-0.414-0.414H7.309c-0.228,0-0.414,0.187-0.414,0.414S7.081,15.383,7.309,15.383 M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555 M12.691,12.484H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,12.484,12.691,12.484 M12.691,12.484H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,12.484,12.691,12.484M12.691,14.555H7.309c-0.228,0-0.414,0.187-0.414,0.414s0.187,0.414,0.414,0.414h5.383c0.229,0,0.414-0.187,0.414-0.414S12.92,14.555,12.691,14.555"></path>
-						</svg>
-
-
-*/
+    navigator.clipboard.writeText(text)
+        .then(function() {
+            //console.log('Async: Copying to clipboard was successful!');
+            alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso! :-)\n bento.dev.br')
+        }, function(err) {
+            alert('Não foi possível copiar os contatos para a área de tranferência seu navegador não tem suporte a este recurso. :(')
+            console.error('Async: Could not copy text: ', err);
+        });
+  
+    
+}
