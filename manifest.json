@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "ZapPull",
+    "version": "0.1.0",
+    "description": "Zap Pull",
+    "icons": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+    "content_scripts":[
+        {
+            "matches": [
+                "https://web.whatsapp.com/"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "js": [
+                "main.js"
+            ]
+        }
+    ]
+}
