@@ -2,7 +2,7 @@
 uma extensão para Crhome para copiar os participantes dos Grupos do WhatsApp
 ### Para instalar o addon
 
-baixe o arquivo [addon-zappul.zip clicando no link ZapPull](https://github.com/izidorio/addon-zappull/releases/download/0.1.1/addon-zapppull.zip)
+baixe o arquivo [addon-zappul.zip clicando no link ZapPull](https://github.com/izidorio/addon-zappull/releases/download/0.1.1/addon-zappull.zip)
 e e descompacte.
 
 Abra o Chrome, na barra de endereço cole o caminho: `chrome://extensions/`<br>
