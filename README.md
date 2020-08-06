@@ -1,5 +1,5 @@
 # addon Zap Pull
-uma extensão para Crhome para copiar os participantes dos Grupos do WhatsApp
+uma extensão para o navegador Chrome que copia os participantes dos Grupos do WhatsApp para a área de transferência
 ### Para instalar o addon
 
 baixe o arquivo [addon-zappul.zip clicando no link ZapPull](https://github.com/izidorio/addon-zappull/releases/download/0.1.1/addon-zappull.zip)
