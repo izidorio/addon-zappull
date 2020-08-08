@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "ZapPull",
-    "version": "0.2.0",
-    "description": "Uma extensão para o navegador Chrome que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp https://github.com/izidorio/addon-zappull",
+    "version": "0.2.1",
+    "description": "Extensão que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp. https://github.com/izidorio/addon-zappull",
     "icons": {
         "16": "icon16.png",
         "48": "icon48.png",

@@ -10,17 +10,19 @@ const getElement = setInterval( () => {
             
             //clearInterval(getElement)
             const button = document.createElement("div")
-            button.addEventListener("click", getContacts)
+            button.addEventListener("click",  getContacts )
             button.innerHTML = `${btnDown}`;        
             header.appendChild(button)            
         
         } 
-        //clica no botão para carregar todos os contatos
-        const allButtons = document.querySelectorAll('.eJ0yJ._1Mq-e');
-        const lastIndex = (allButtons.length - 1);
-        if(allButtons[lastIndex]){            
-            allButtons[lastIndex].click();    
+        
+        const div_3X7RF = document.querySelectorAll('._3X7RF');                
+        if( div_3X7RF.length ){
+            const div_325lp = div_3X7RF[0].parentNode;            
+            const div_eJ0yJ_1Mq_e = div_325lp ? div_325lp.parentNode : null;             
+            div_eJ0yJ_1Mq_e && div_eJ0yJ_1Mq_e.click();
         }
+        
     }
     
     const div_3_cMa_3Whw5 = document.querySelector('._3-cMa._3Whw5');
@@ -36,7 +38,7 @@ const getElement = setInterval( () => {
             //clearInterval(getElement)
             const div = container.firstChild;            
             const button = document.createElement("div")            
-            button.addEventListener("click", getText )
+            button.addEventListener("click",  getText )
             button.innerHTML = `${btnCopy}`;        
             div.appendChild(button);           
         
