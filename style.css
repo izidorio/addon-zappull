@@ -1,11 +1,8 @@
-.content{
-    position: absolute;
-    top: 18px;
-    right: 160px;
-    z-index: 999;
+#btnCopy,
+#btnDown {
     cursor: pointer;
-    
 }
-#zappull:hover{
+#btnCopy:hover,
+#btnDown:hover{
     transform: scale(1.1);
 }
