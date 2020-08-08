@@ -23,8 +23,8 @@ Agora no WhatsApp Web quando você abrir um grupo,  visualizará o botão ![](./
 
 > Caso o WhastApp Web já estiver aberto você precisará recarregar a página para ativar a extensão.
 
-![](./assets/01.png)<br /> 
-![](./assets/02.png)<br />
+![](./assets/chrome1.png)<br /> 
+![](./assets/chrome2.png)<br />
 
 ## License
 
