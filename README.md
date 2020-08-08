@@ -1,5 +1,7 @@
 # Zap Pull
-Uma extensão para o navegador Chrome que `baixa em .csv ou copia para a área de transferência` os participantes dos Grupos do WhatsApp.
+Uma extensão para o navegador Chrome que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp.
+
+![](./assets/00.gif)
 
 ### Para instalar a extensão
 

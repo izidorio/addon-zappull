@@ -76,20 +76,33 @@ function getContacts(){
                 const div_eJ0yJ_1Mq_e = div_1[0].childNodes;
                 const [div_325lp, div_2kHpK] = div_eJ0yJ_1Mq_e[0].childNodes;
                 const [div_3dtfX, div_1582E] = div_2kHpK.childNodes;
-                const [div_3CneP, div_m60XR]= div_3dtfX.childNodes;
+                const [div_3CneP, div_m60XR]= div_3dtfX.childNodes;                
+                const [div_357i8] = (div_3CneP && div_3CneP.childNodes) ? div_3CneP.childNodes : []; 
                 
-                const [div_357i8] = (div_3CneP && div_3CneP.childNodes) ? div_3CneP.childNodes : [];               
-                const [div_3ko75_5h6Y__3Whw5] = ( div_357i8 && div_357i8.childNodes ) ? div_357i8.childNodes : [];
+                const [div_3ko75_5h6Y__3Whw5] = ( div_357i8 && div_357i8.childNodes ) ? div_357i8.childNodes : div_357i8;
+                /*
+                let div_3ko75_5h6Y__3Whw5;
+                if(div_357i8 && div_357i8.childNodes ){
+                    div_3ko75_5h6Y__3Whw5 = div_357i8.childNodes;
+                    console.log('true');
+                }else{
+                    console.log('else');
+                    div_3ko75_5h6Y__3Whw5 = div_357i8;
+                }
+                */
+              
+                
                 const [div_LwCwJ] = (div_m60XR && div_m60XR.childNodes) ? div_m60XR.childNodes : [];
-                
                 const [ div_3tBW6, div_m61XR ] = (div_1582E && div_1582E.childNodes) ? div_1582E.childNodes : [];
                 const [ div_3ko75_3Whw5 ] = (div_3tBW6 && div_3tBW6.childNodes) ? div_3tBW6.childNodes : [];
                 const [ div_1_1Jb ] = (div_m61XR && div_m61XR.childNodes) ? div_m61XR.childNodes : [];
-                const [ div_3Whw5 ] = (div_1_1Jb && div_1_1Jb.childNodes) ? div_1_1Jb.childNodes : [];
+                const [ div_3Whw5 ] = (div_1_1Jb && div_1_1Jb.childNodes) ? div_1_1Jb.childNodes : [];               
+               
+                let number = (div_3ko75_5h6Y__3Whw5 && div_3ko75_5h6Y__3Whw5.innerHTML)
+                    ? div_3ko75_5h6Y__3Whw5.innerHTML 
+                    : div_3ko75_5h6Y__3Whw5.nodeValue;               
                 
-                
-                let number = (div_3ko75_5h6Y__3Whw5 && div_3ko75_5h6Y__3Whw5.innerHTML) ? div_3ko75_5h6Y__3Whw5.innerHTML : '';
-                number = number.replace(/\+55\s|\+|-/gi,"");     
+                number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
                 
                 let admin = div_LwCwJ ? div_LwCwJ.innerHTML : '';
                 admin = admin.replace(/\<.*\>/gi,"");  
@@ -102,6 +115,7 @@ function getContacts(){
                 
                 const sanitize = `${number};${admin};${status};${nikname}\n`;
                 text += sanitize.replace(/\,|\'|\"|\“|\”/g,"");     
+                
                 
             }
             
