@@ -155,7 +155,7 @@ function copyToClipboard(text) {
     navigator.clipboard.writeText(text)
         .then(function() {
             //console.log('Async: Copying to clipboard was successful!');
-            alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso! :-)\n bento.dev.br')
+            alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso! :-)\n izidorio@bento.dev.br')
         }, function(err) {
             alert('Não foi possível copiar os contatos para a área de transferência seu navegador não tem suporte a este recurso. :(')
             console.error('Async: Could not copy text: ', err);
