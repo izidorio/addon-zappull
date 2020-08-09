@@ -78,20 +78,7 @@ function getContacts(){
                 const [div_3dtfX, div_1582E] = div_2kHpK.childNodes;
                 const [div_3CneP, div_m60XR]= div_3dtfX.childNodes;                
                 const [div_357i8] = (div_3CneP && div_3CneP.childNodes) ? div_3CneP.childNodes : []; 
-                
                 const [div_3ko75_5h6Y__3Whw5] = ( div_357i8 && div_357i8.childNodes ) ? div_357i8.childNodes : div_357i8;
-                /*
-                let div_3ko75_5h6Y__3Whw5;
-                if(div_357i8 && div_357i8.childNodes ){
-                    div_3ko75_5h6Y__3Whw5 = div_357i8.childNodes;
-                    console.log('true');
-                }else{
-                    console.log('else');
-                    div_3ko75_5h6Y__3Whw5 = div_357i8;
-                }
-                */
-              
-                
                 const [div_LwCwJ] = (div_m60XR && div_m60XR.childNodes) ? div_m60XR.childNodes : [];
                 const [ div_3tBW6, div_m61XR ] = (div_1582E && div_1582E.childNodes) ? div_1582E.childNodes : [];
                 const [ div_3ko75_3Whw5 ] = (div_3tBW6 && div_3tBW6.childNodes) ? div_3tBW6.childNodes : [];
@@ -130,8 +117,7 @@ function getContacts(){
 function setHeight(size){
     return new Promise( (resolve) => {
 
-        const containerHack = document.querySelector('._2fpYo');
-        //containerHack.setAttribute("style", "height: "+size+";");
+        const containerHack = document.querySelector('._2fpYo');        
         containerHack.style.height = size;
 
         const check = setInterval( () => {
@@ -169,13 +155,10 @@ function saveToDataFile(text, fileName){
 function copyToClipboard(text) {
 
     navigator.clipboard.writeText(text)
-        .then(function() {
-            //console.log('Async: Copying to clipboard was successful!');
+        .then(function() {            
             alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso! :-)\n izidorio@bento.dev.br')
         }, function(err) {
             alert('Não foi possível copiar os contatos para a área de transferência seu navegador não tem suporte a este recurso. :(')
             console.error('Async: Could not copy text: ', err);
-        });
-  
-    
+        });    
 }
