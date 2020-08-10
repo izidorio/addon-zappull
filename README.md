@@ -1,7 +1,7 @@
 # Zap Pull
 Uma extensão para o navegador Chrome que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp.
 
-![](./assets/00.gif)
+![](./common/00.gif)
 
 ### Para instalar a extensão
 
@@ -17,17 +17,17 @@ Uma extensão para o navegador Chrome que baixa em .csv ou copia para a área de
 
 - Se tudo ocorreu bem você verá o card da Extensão instalada.
 
-![](./assets/01.gif)<br>
+![](./common/01.gif)<br>
 
 ### Como utilizar
 
 > Caso o WhastApp Web já estiver aberto você precisará recarregar a página para ativar a extensão.
 
-Agora no WhatsApp Web quando você abrir um grupo,  visualizará o botão ![](./assets/btn-copy.png) para copiar os participantes do grupo para a área de transferência e ao clicar em Dados do grupo verá o botão ![](./assets/btn-csv.png) para baixar os contatos em .csv
+Agora no WhatsApp Web quando você abrir um grupo,  visualizará o botão ![](./common/btn-copy.png) para copiar os participantes do grupo para a área de transferência e ao clicar em Dados do grupo verá o botão ![](./common/btn-csv.png) para baixar os contatos em .csv
 
 
-![](./assets/chrome1.png)<br /> 
-![](./assets/chrome2.png)<br />
+![](./common/chrome1.png)<br /> 
+![](./common/chrome2.png)<br />
 
 ## License
 
