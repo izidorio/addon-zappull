@@ -69,7 +69,7 @@ function getContacts(){
             
             const elements = document.querySelector('.-GlrD._2xoTX');
             const items = elements.childNodes;
-            let text = 'Número;Administrador;Status;Nikname\n'                                 
+            let text = 'Número;Administrador;Status;Nome\n'                                 
             for (let item of items){
                 
                 const div_1 = item.childNodes;              
@@ -97,10 +97,10 @@ function getContacts(){
                 let status = div_3ko75_3Whw5 ? div_3ko75_3Whw5.innerHTML : '';     
                 status = status.replace(/\<.*\>/g,"");     
                                 
-                let nikname = div_3Whw5 ? div_3Whw5.innerHTML : '';     
-                nikname = nikname.replace(/\<.*\>/gi,"");     
+                let name = div_3Whw5 ? div_3Whw5.innerHTML : '';     
+                name = name.replace(/\<.*\>/gi,"");     
                 
-                const sanitize = `${number};${admin};${status};${nikname}\n`;
+                const sanitize = `${number};${admin};${status};${name}\n`;
                 text += sanitize.replace(/\,|\'|\"|\“|\”/g,"");     
                 
                 
@@ -156,7 +156,7 @@ function copyToClipboard(text) {
 
     navigator.clipboard.writeText(text)
         .then(function() {            
-            alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso! :-)\n izidorio@bento.dev.br')
+            alert(' Os participantes do grupo\n foram copiados para área de transferência com sucesso!\n :-) izidorio@bento.dev.br')
         }, function(err) {
             alert('Não foi possível copiar os contatos para a área de transferência seu navegador não tem suporte a este recurso. :(')
             console.error('Async: Could not copy text: ', err);
