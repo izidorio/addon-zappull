@@ -25,7 +25,11 @@ const setButtons = setInterval( () => {
 
 
         const header = document.querySelector('._1D7Lo');
-        if(header){                    
+        if(header){   
+            
+            const [ div_3SrqU, div_3vTfY ] = header.childNodes;
+            if( div_3vTfY && div_3vTfY.innerHTML && div_3vTfY.innerHTML === 'Dados do contato') return;
+            
             //clearInterval(getElement)
             const button = document.createElement("div")            
             button.addEventListener("click", saveCsv );
