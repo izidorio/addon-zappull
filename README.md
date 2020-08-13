@@ -5,7 +5,7 @@ Uma extensão para o navegador Chrome que baixa em .csv ou copia para a área de
 
 ### Para instalar a extensão
 
-1. Baixe o arquivo [addon-zappul.zip clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.3.0/addon-zappull.zip)
+1. Baixe o arquivo [addon-zappul.zip clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.3.1/addon-zappull.zip)
 
 2. Descompacte o arquivo baixado.
 

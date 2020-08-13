@@ -29,7 +29,7 @@ export async function preview(){
     const name = nameGroup();
     
     readGroup().then( ( contacts ) => {
-        
+
         contacts.sort( (a, b) => {
             return b.admin - a.admin;
         })
@@ -39,15 +39,16 @@ export async function preview(){
         let cards = '';
         let i = 1;
         for( let contact of contacts){
+            
             cards += card(contact)
             if( i % 14 == 0 ){                
                 html += container(cards);
-                cards = '';
-                i=0;
+                cards = '';               
             }
             i++;
+           
         }
-        
+        if(i < 14) html += container(cards);
         const previewPage = window.open('about:blank');
         previewPage.document.write(html);
         
