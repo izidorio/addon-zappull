@@ -48,7 +48,9 @@ export async function preview(){
             i++;
            
         }
-        if(i < 14) html += container(cards);
+        
+        html += container(cards);
+        
         const previewPage = window.open('about:blank');
         previewPage.document.write(html);
         
