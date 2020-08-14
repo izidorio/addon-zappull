@@ -65,10 +65,7 @@ function getContacts(action){
     
     setHeight('9999999999px').then( () => {
 
-        let contacts = [{
-            number: '21964276349'
-        }];
-        
+              
         setTimeout( () => {
             
             const div_2FVVk_230FM = document.querySelector('._2FVVk._230FM');
