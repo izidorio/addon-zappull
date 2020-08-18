@@ -1,25 +1,28 @@
 {
     "manifest_version": 2,
     "name": "ZapPull",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Extensão que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp. https://github.com/izidorio/addon-zappull",
     "author": "Izidorio Bento <izidorio@bento.dev.br>",
     "icons": {
-        "16": "src/assets/icons/icon16.png",
-        "48": "src/assets/icons/icon48.png",
-        "128": "src/assets/icons/icon128.png"
+      "16": "src/assets/icons/icon16.png",
+      "48": "src/assets/icons/icon48.png",
+      "128": "src/assets/icons/icon128.png"
     },
-    "content_scripts":[
-        {
-            "matches": [
-                "https://web.whatsapp.com/"
-            ],
-            "css": [
-                "src/assets/style.css"
-            ],
-            "js": [
-                "src/main.js"
-            ]
-        }
+    "background": {
+        "page": "src/html/background.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["src/js/content_script.js"],
+        "css": ["src/assets/style.css"]
+      }
+    ],
+    "permissions": [
+      "https://web.whatsapp.com"
+    ],
+    "web_accessible_resources": [
+      "src/js/*"
     ]
 }
