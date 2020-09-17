@@ -10,6 +10,16 @@ export function nameGroup() {
 
 }
 
+export function dateCreatedGroup() {
+
+    const div_2_1_O = document.querySelector('._2-1_O');
+    
+    
+    const groupDateCreated =  div_2_1_O.innerHTML;
+    return groupDateCreated;  
+
+}
+
 export async function readGroup() {
     
     await setHeight('9999999999px');

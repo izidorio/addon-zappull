@@ -18,8 +18,6 @@ const setButtons = setInterval( () => {
                 const div_eJ0yJ_1Mq_e = div_325lp ? div_325lp.parentNode : null;             
                 div_eJ0yJ_1Mq_e && div_eJ0yJ_1Mq_e.click();
             }, 2000);
-
-
             
         }
 
@@ -84,3 +82,4 @@ const setButtons = setInterval( () => {
 }, 2000);
 
 export default setButtons;
+

@@ -1,4 +1,4 @@
-import { readGroup, nameGroup, readTitle } from './scraping.js';
+import { readGroup, dateCreatedGroup, nameGroup, readTitle } from './scraping.js';
 import { saveToDataFile, copyToClipboard } from './utils.js';
 import { style, card, container } from './template.js';
 
@@ -19,7 +19,7 @@ export async function saveCsv(){
             return sanitize.replace(/\,|\'|\"|\“|\”/g,"");            
         }).join('');
 
-        saveToDataFile(csv, nameFile);
+        saveToDataFile(csv, nameFile || 'grupo');
     });
     
 }
@@ -27,6 +27,7 @@ export async function saveCsv(){
 export async function preview(){
     
     const name = nameGroup();
+    const created = dateCreatedGroup();
     
     readGroup().then( ( contacts ) => {
 
@@ -34,7 +35,7 @@ export async function preview(){
             return b.admin - a.admin;
         })
 
-        let html = `${style}<h2>${name} (${contacts.length} participantes)</h2>`; 
+        let html = `${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
         
         let cards = '';
         let i = 1;
