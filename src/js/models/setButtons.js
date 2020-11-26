@@ -9,23 +9,21 @@ import { saveCsv, preview, contactsToClipboard } from './handle.js';
 const setButtons = setInterval( () => {
     
     if(!document.getElementById('btnDown')){
-
-        const div_3X7RF = document.querySelectorAll('._3X7RF');                
-        if( div_3X7RF.length ){
+        const _3Pwfx_2XSjg = document.querySelectorAll('._3Pwfx._2XSjg');
+        if( _3Pwfx_2XSjg && _3Pwfx_2XSjg.length ){
+            const indexMore = _3Pwfx_2XSjg.length - 1
 
             setTimeout( () => {
-                const div_325lp = div_3X7RF[0].parentNode;            
-                const div_eJ0yJ_1Mq_e = div_325lp ? div_325lp.parentNode : null;             
-                div_eJ0yJ_1Mq_e && div_eJ0yJ_1Mq_e.click();
+               _3Pwfx_2XSjg[indexMore].click();
             }, 2000);
             
         }
 
-
-        const header = document.querySelector('._1D7Lo');
+       
+        const header = document.querySelector('._1DmXq');
         if(header){   
             
-            const [ div_3SrqU, div_3vTfY ] = header.childNodes;
+            const [ , div_3vTfY ] = header.childNodes;
             if( div_3vTfY && div_3vTfY.innerHTML && div_3vTfY.innerHTML === 'Dados do contato') return;
             
             //clearInterval(getElement)
@@ -43,7 +41,7 @@ const setButtons = setInterval( () => {
             let i = 0;
             let scrollDow = setInterval(()=>{
                 i++;
-                let box = document.querySelector('._2wPpw');
+                let box = document.querySelector('._3Xjbn._1RHZR');
                 const height = i * 7500
                 if( box && box.scrollTo ) box.scrollTo({top: height, behavior: 'smooth'});
                
@@ -55,18 +53,17 @@ const setButtons = setInterval( () => {
                
             }, 1500);
 
-
         } 
     }
     
-    const div_3_cMa_3Whw5 = document.querySelector('._3-cMa._3Whw5');
-    if( div_3_cMa_3Whw5 &&  !document.getElementById('btnCopy')){
+    const _2aNms = document.querySelector('._2aNms');
+    if( _2aNms &&  !document.getElementById('btnCopy')){
        
-        const text = div_3_cMa_3Whw5.innerHTML;
+        const text = _2aNms.innerHTML;
         if(text === 'online' || text === 'clique aqui para dados do contato')
             return;
         
-        const container = document.querySelector('._3nq_A');
+        const container = document.querySelector('.VPvMz');
         if(container){
             
             //clearInterval(getElement)

@@ -2,70 +2,59 @@ import { setHeight } from './utils.js';
 
 export function nameGroup() {
 
-    const div_2FVVk_230FM = document.querySelector('._2FVVk._230FM');
-    const div_3FRCZ = div_2FVVk_230FM.lastChild;
-    
-    let groupName = (div_3FRCZ && div_3FRCZ.innerHTML) ? div_3FRCZ.innerHTML : 'contatos';
-    return groupName.replace(/\<.*\>/gi,"");  
+    const yEe1t = document.querySelector('.YEe1t');
+    const title = yEe1t.textContent;
+
+    return title.replace(/\<.*\>/gi,"");  
 
 }
 
 export function dateCreatedGroup() {
 
-    const div_2_1_O = document.querySelector('._2-1_O');
-    
-    
-    const groupDateCreated =  div_2_1_O.innerHTML;
-    return groupDateCreated;  
+    const _13BQq = document.querySelector('._13BQq');
+    return _13BQq.textContent;  
 
 }
 
 export async function readGroup() {
-    
     await setHeight('9999999999px');
-    
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
 
-            const elements = document.querySelector('.-GlrD._2xoTX');
-            const items = elements.childNodes;        
+            // const elements = document.querySelector('.-GlrD._2xoTX');
+            const elements = document.querySelectorAll('._3Pwfx._2XSjg');
+            
+            //const items = elements.childNodes;        
             
             let contacts = [];
 
-            for (let item of items){
+            for (let item of elements){
+                console.log(item);
                 
-                const div_1 = item.childNodes;              
-                const div_eJ0yJ_1Mq_e = div_1[0].childNodes;               
-                const [div_325lp, div_2kHpK] = div_eJ0yJ_1Mq_e[0].childNodes;                
-                const div_1BjNO = div_325lp.childNodes;
-                const div_2goTk = div_1BjNO[0].firstChild;                
-                const [div_3dtfX, div_1582E] = div_2kHpK.childNodes;
-                const [div_3CneP, div_m60XR]= div_3dtfX.childNodes;                
-                const [div_357i8] = (div_3CneP && div_3CneP.childNodes) ? div_3CneP.childNodes : []; 
-                const [div_3ko75_5h6Y__3Whw5] = ( div_357i8 && div_357i8.childNodes ) ? div_357i8.childNodes : div_357i8;
-                const [div_LwCwJ] = (div_m60XR && div_m60XR.childNodes) ? div_m60XR.childNodes : [];
-                const [ div_3tBW6, div_m61XR ] = (div_1582E && div_1582E.childNodes) ? div_1582E.childNodes : [];
-                const [ div_3ko75_3Whw5 ] = (div_3tBW6 && div_3tBW6.childNodes) ? div_3tBW6.childNodes : [];
-                const [ div_1_1Jb ] = (div_m61XR && div_m61XR.childNodes) ? div_m61XR.childNodes : [];
-                const [ div_3Whw5 ] = (div_1_1Jb && div_1_1Jb.childNodes) ? div_1_1Jb.childNodes : [];               
-               
-                let number = (div_3ko75_5h6Y__3Whw5 && div_3ko75_5h6Y__3Whw5.innerHTML)
-                    ? div_3ko75_5h6Y__3Whw5.innerHTML 
-                    : div_3ko75_5h6Y__3Whw5.nodeValue;               
+                const [_22mTQ, _1C6Zl] = item.childNodes;
+                //imagem < _22mTQ
+                const [_1l12d] = _22mTQ.childNodes; 
+                const [img] = _1l12d.childNodes;
+
+                //textos < _1C6Zl
+                const [_1c_mC, _7W_3c] = _1C6Zl.childNodes;
+                const [_3Tw1q, _2gsiG] = _1c_mC.childNodes; 
+                const [fqPQb, _2gsiG_] = _7W_3c.childNodes; 
                 
-                number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
-                
-                const admin = (div_LwCwJ && div_LwCwJ.innerHTML) ? true : false;
-                
-                let status = div_3ko75_3Whw5 ? div_3ko75_3Whw5.innerHTML : '';     
-                status = status.replace(/\<.*\>/g,"");     
-                                
-                let name = div_3Whw5 ? div_3Whw5.innerHTML : '';     
-                name = name.replace(/\<.*\>/gi,"");     
-                
-                let src = div_2goTk.src || '';
+                const admin = !!_2gsiG;
+
+                let status = fqPQb.textContent || '';
+                status = status.replace(/\<.*\>/g,""); 
+
+                let name = _2gsiG_.textContent || '';
+                name = name.replace(/\<.*\>/gi,"");   
+
+                let src = img.src || '';
                 src = src.replace('t=s','t=l');
+                
+                let number = _3Tw1q.textContent || '';
+                number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
                 
                 contacts.push({
                     number,
@@ -87,8 +76,8 @@ export async function readGroup() {
 }
   
 export function readTitle(){
-    const div_3_cMa_3Whw5 = document.querySelector('._3-cMa._3Whw5');
-    let title = div_3_cMa_3Whw5.innerHTML.replace(/,\s/gi,"\n");    
+    const _2Gdma_2amHe = document.querySelector('._2Gdma._2amHe');
+     let title = _2Gdma_2amHe.textContent.replace(/,\s/gi,"\n");    
     title = title.replace(/\+55\s|\+|-/gi,"");
     return title;
 }
