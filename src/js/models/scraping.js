@@ -30,7 +30,6 @@ export async function readGroup() {
             let contacts = [];
 
             for (let item of elements){
-                console.log(item);
                 
                 const [_22mTQ, _1C6Zl] = item.childNodes;
                 //imagem < _22mTQ
