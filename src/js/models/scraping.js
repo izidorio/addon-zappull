@@ -38,8 +38,9 @@ export async function readGroup() {
 
                 //textos < _1C6Zl
                 const [_1c_mC, _7W_3c] = _1C6Zl.childNodes;
-                const [_3Tw1q, _2gsiG] = _1c_mC.childNodes; 
-                const [fqPQb, _2gsiG_] = _7W_3c.childNodes; 
+                const [_3Tw1q, _2gsiG] = _1c_mC.childNodes;
+
+                const [fqPQb, _2gsiG_] = _7W_3c ? _7W_3c.childNodes : ['','']; 
                 
                 const admin = !!_2gsiG;
 
