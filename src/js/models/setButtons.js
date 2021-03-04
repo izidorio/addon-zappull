@@ -35,7 +35,7 @@ const setButtons = setInterval( () => {
                 
                         if (!box || i === 3){
 
-                            containerDadosGrupo.appendChild(divBtnPrint)     
+                           // containerDadosGrupo.appendChild(divBtnPrint)     
                             clearInterval(scrollDow);
                         } 
                 

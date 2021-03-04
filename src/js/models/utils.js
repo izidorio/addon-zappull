@@ -1,9 +1,8 @@
 export function setHeight(size){
     
     return new Promise( (resolve) => {
-
-        // const containerHack = document.querySelector('._2fpYo');        
-        const containerHack = document.querySelector('.i5ly3._299go');        
+               
+        const containerHack = document.querySelector('._1Flk2._3xysY');        
         
         if(containerHack) {
 

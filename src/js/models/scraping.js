@@ -2,7 +2,7 @@ import { setHeight } from './utils.js';
 
 export function nameGroup() {
 
-    const yEe1t = document.querySelector('.YEe1t');
+    const yEe1t = document.querySelector('._2KQyF ._35k-1._1adfa._3-8er');
     const title = yEe1t.textContent;
 
     return title.replace(/\<.*\>/gi,"");  
@@ -11,20 +11,20 @@ export function nameGroup() {
 
 export function dateCreatedGroup() {
 
-    const _13BQq = document.querySelector('._13BQq');
+    const _13BQq = document.querySelector('._37Hn4._3O1wx');
     return _13BQq.textContent;  
 
 }
 
 export async function readGroup() {
+   
     await setHeight('9999999999px');
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
 
-            // const elements = document.querySelector('._2Z4DV _25uA8');
-            const elements = document.querySelectorAll('._3Pwfx._2XSjg');
-            
+            const elements = document.querySelectorAll('._2Z4DV._25uA8');
+           
             //const items = elements.childNodes;        
             
             let contacts = [];
@@ -32,6 +32,7 @@ export async function readGroup() {
             for (let item of elements){
                 
                 const [_22mTQ, _1C6Zl] = item.childNodes;
+                
                 //imagem < _22mTQ
                 const [_1l12d] = _22mTQ.childNodes; 
                 const [img] = _1l12d.childNodes;
