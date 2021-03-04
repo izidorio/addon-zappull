@@ -22,7 +22,7 @@ export async function readGroup() {
     
         setTimeout( () => {
 
-            // const elements = document.querySelector('.-GlrD._2xoTX');
+            // const elements = document.querySelector('._2Z4DV _25uA8');
             const elements = document.querySelectorAll('._3Pwfx._2XSjg');
             
             //const items = elements.childNodes;        
@@ -76,8 +76,9 @@ export async function readGroup() {
 }
   
 export function readTitle(){
-    const _2Gdma_2amHe = document.querySelector('._2Gdma._2amHe');
-     let title = _2Gdma_2amHe.textContent.replace(/,\s/gi,"\n");    
+    //.YmixP.fKfSX
+    const classContainerParticipantes = document.querySelector('.YmixP.fKfSX');
+     let title = classContainerParticipantes.textContent.replace(/,\s/gi,"\n");    
     title = title.replace(/\+55\s|\+|-/gi,"");
     return title;
 }

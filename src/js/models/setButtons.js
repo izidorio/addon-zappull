@@ -9,28 +9,53 @@ import { saveCsv, preview, contactsToClipboard } from './handle.js';
 const setButtons = setInterval( () => {
     
     if(!document.getElementById('btnDown')){
-        const _3Pwfx_2XSjg = document.querySelectorAll('._3Pwfx._2XSjg');
-        if( _3Pwfx_2XSjg && _3Pwfx_2XSjg.length ){
-            const indexMore = _3Pwfx_2XSjg.length - 1
-
-            setTimeout( () => {
-               _3Pwfx_2XSjg[indexMore].click();
-            }, 2000);
-            
-        }
-
+        
+        const btnMais = document.querySelectorAll('._2Z4DV._25uA8');
        
-        const header = document.querySelector('._1DmXq');
-        if(header){   
+
+        const content =  btnMais.length > 0 ? btnMais[btnMais.length - 1] : null;
+        if(content){
+            const [, containerBtn] = content.childNodes;
+            const [containerMais] = containerBtn.childNodes;
+            const [txtMais] = containerMais.childNodes;
+            const text = String(txtMais.textContent);
             
-            const [ , div_3vTfY ] = header.childNodes;
+            if(text.match(/mais/g)){
+                content.click();
+
+
+                let i = 0;
+                let scrollDow = setInterval(()=>{
+                    // classe do container dos contatos par rolar 
+                    let box = document.querySelector('._1C2Q3._36Jt6');
+                    
+                    i++;
+                    const height = i * 7500
+                    if( box && box.scrollTo ) box.scrollTo({top: height, behavior: 'smooth'});
+                
+                        if (!box || i === 3){
+
+                            containerDadosGrupo.appendChild(divBtnPrint)     
+                            clearInterval(scrollDow);
+                        } 
+                
+                }, 1500);
+            }
+        }
+      
+        // classe do container Dados do grupo
+        const containerDadosGrupo = document.querySelectorAll('._2fGIm')[0];
+        
+        if(containerDadosGrupo){   
+            
+            const [ , div_3vTfY ] = containerDadosGrupo.childNodes;
             if( div_3vTfY && div_3vTfY.innerHTML && div_3vTfY.innerHTML === 'Dados do contato') return;
             
             //clearInterval(getElement)
             const button = document.createElement("div")            
             button.addEventListener("click", saveCsv );
             button.innerHTML = `${btnDown}`;        
-            header.appendChild(button)     
+            containerDadosGrupo.appendChild(button)     
             
             const divBtnPrint = document.createElement("div")            
             divBtnPrint.addEventListener("click", preview);
@@ -47,7 +72,7 @@ const setButtons = setInterval( () => {
                
                 if (!box || i === 3){
 
-                    header.appendChild(divBtnPrint)     
+                    containerDadosGrupo.appendChild(divBtnPrint)     
                     clearInterval(scrollDow);
                 } 
                
@@ -56,14 +81,16 @@ const setButtons = setInterval( () => {
         } 
     }
     
-    const _2aNms = document.querySelector('._2aNms');
-    if( _2aNms &&  !document.getElementById('btnCopy')){
+    // classe do botão search e menu
+    const _1IeOz = document.querySelector('._1IeOz');
+    
+    if( _1IeOz &&  !document.getElementById('btnCopy')){
        
-        const text = _2aNms.innerHTML;
+        const text = _1IeOz.innerHTML;
         if(text === 'online' || text === 'clique aqui para dados do contato')
             return;
         
-        const container = document.querySelector('.VPvMz');
+        const container = document.querySelector('._1IeOz');
         if(container){
             
             //clearInterval(getElement)
