@@ -1,4 +1,4 @@
-import { readGroup, dateCreatedGroup, nameGroup, readTitle } from './scraping.js';
+import { readGroup, dateCreatedGroup, nameGroup, readListParticipants } from './scraping.js';
 import { saveToDataFile, copyToClipboard } from './utils.js';
 import { style, card, container } from './template.js';
 
@@ -35,7 +35,7 @@ export async function preview(){
             return b.admin - a.admin;
         })
 
-        let html = `${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
+        let html = `<title>${name}</title>${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
         
         let cards = '';
         let i = 1;
@@ -59,7 +59,7 @@ export async function preview(){
 }
 
 export function contactsToClipboard(){
-    const contacts = readTitle();
+    const contacts = readListParticipants();
     copyToClipboard(contacts);
 
 }

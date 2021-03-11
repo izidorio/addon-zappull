@@ -1,18 +1,28 @@
 import { setHeight } from './utils.js';
 
 export function nameGroup() {
-
-    const yEe1t = document.querySelector('._2KQyF ._35k-1._1adfa._3-8er');
-    const title = yEe1t.textContent;
-
-    return title.replace(/\<.*\>/gi,"");  
+    // div > span com nome do grupo
+    try {
+        const span_name_group = document.querySelector('._2KQyF ._35k-1._1adfa._3-8er');
+        const title = span_name_group.textContent;
+    
+        return title.replace(/\<.*\>/gi,"");         
+    } catch (error) {
+        return 'error-nome-grupo'
+    }
+ 
 
 }
 
 export function dateCreatedGroup() {
+    try {
+        // span com a data de criação do grupo   
+        const span_date_group = document.querySelector('._37Hn4._3O1wx');
+        return span_date_group.textContent;          
+    } catch (error) {
+        return 'error-data-grupo'
+    }
 
-    const _13BQq = document.querySelector('._37Hn4._3O1wx');
-    return _13BQq.textContent;  
 
 }
 
@@ -22,39 +32,39 @@ export async function readGroup() {
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
-
+            // div que envolve o avatar e os dados dos participantes do grupo
             const elements = document.querySelectorAll('._2Z4DV._25uA8');
            
-            //const items = elements.childNodes;        
-            
             let contacts = [];
 
             for (let item of elements){
+                // wrappers: avatar e conteúdo
+                const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
                 
-                const [_22mTQ, _1C6Zl] = item.childNodes;
+                // wrapper image < div_wrapper_avatar
+                const [div_wrapper_img] = div_wrapper_avatar.childNodes; 
+                const [img] = div_wrapper_img.childNodes;
+
+                // wrappers das linhas < div_wrapper_content
+                const [div_wrapper_title, div_wrapper_status] = div_wrapper_content.childNodes;
+
+                // wrappers: nome administrador
+                const [span_phone, span_status] = div_wrapper_title.childNodes;
+
+                const [span_status_desc, span_status_name] = div_wrapper_status ? div_wrapper_status.childNodes : ['','']; 
                 
-                //imagem < _22mTQ
-                const [_1l12d] = _22mTQ.childNodes; 
-                const [img] = _1l12d.childNodes;
+                const admin = !!span_status;
 
-                //textos < _1C6Zl
-                const [_1c_mC, _7W_3c] = _1C6Zl.childNodes;
-                const [_3Tw1q, _2gsiG] = _1c_mC.childNodes;
-
-                const [fqPQb, _2gsiG_] = _7W_3c ? _7W_3c.childNodes : ['','']; 
-                
-                const admin = !!_2gsiG;
-
-                let status = fqPQb.textContent || '';
+                let status = span_status_desc.textContent || '';
                 status = status.replace(/\<.*\>/g,""); 
 
-                let name = _2gsiG_.textContent || '';
+                let name = span_status_name.textContent || '';
                 name = name.replace(/\<.*\>/gi,"");   
 
                 let src = img.src || '';
                 src = src.replace('t=s','t=l');
                 
-                let number = _3Tw1q.textContent || '';
+                let number = span_phone.textContent || '';
                 number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
                 
                 contacts.push({
@@ -76,12 +86,17 @@ export async function readGroup() {
  
 }
   
-export function readTitle(){
-    //.YmixP.fKfSX
-    const classContainerParticipantes = document.querySelector('.YmixP.fKfSX');
-     let title = classContainerParticipantes.textContent.replace(/,\s/gi,"\n");    
-    title = title.replace(/\+55\s|\+|-/gi,"");
-    return title;
+export function readListParticipants(){
+    // div com a lista de números/nomes dos participantes do grupo
+    try {
+        const classContainerParticipantes = document.querySelector('.YmixP.fKfSX');
+        let title = classContainerParticipantes.textContent.replace(/,\s/gi,"\n");    
+        title = title.replace(/\+55\s|\+|-/gi,"");
+        return title;        
+    } catch (error) {
+        return 'erro-participantes'
+    }
+
 }
 
 
