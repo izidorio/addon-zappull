@@ -17,7 +17,7 @@ export function nameGroup() {
 export function dateCreatedGroup() {
     try {
         // span com a data de criação do grupo   
-        const span_date_group = document.querySelector('._37Hn4._3O1wx');
+        const span_date_group = document.querySelector('._37Hn4._1AJnI._29Iga');
         return span_date_group.textContent;          
     } catch (error) {
         return 'error-data-grupo'
