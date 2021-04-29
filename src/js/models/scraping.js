@@ -42,8 +42,8 @@ export async function readGroup() {
                 const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
                 
                 // wrapper image < div_wrapper_avatar
-                const [div_wrapper_img] = div_wrapper_avatar.childNodes; 
-                const [img] = div_wrapper_img.childNodes;
+                const [div_wrapper_rondend] = div_wrapper_avatar.childNodes; 
+                const [, img] = div_wrapper_rondend.childNodes; 
 
                 // wrappers das linhas < div_wrapper_content
                 const [div_wrapper_title, div_wrapper_status] = div_wrapper_content.childNodes;
@@ -60,9 +60,14 @@ export async function readGroup() {
 
                 let name = span_status_name.textContent || '';
                 name = name.replace(/\<.*\>/gi,"");   
-
-                let src = img.src || '';
-                src = src.replace('t=s','t=l');
+                
+                let src = '';
+                try {
+                    src = img.src.replace('t=s','t=l');      
+                } catch (error) {
+                  
+                }
+             
                 
                 let number = span_phone.textContent || '';
                 number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
