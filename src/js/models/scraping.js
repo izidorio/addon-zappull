@@ -41,8 +41,9 @@ export async function readGroup() {
                 // wrappers: avatar e conteúdo
                 const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
                 
-                // wrapper image < div_wrapper_avatar
-                const [div_wrapper_rondend] = div_wrapper_avatar.childNodes; 
+                // wrapper image < flex < div_wrapper_avatar
+                const [div_wrapper_flex_avatar ] = div_wrapper_avatar.childNodes;
+                const [div_wrapper_rondend] = div_wrapper_flex_avatar.childNodes; 
                 const [, img] = div_wrapper_rondend.childNodes; 
 
                 // wrappers das linhas < div_wrapper_content
