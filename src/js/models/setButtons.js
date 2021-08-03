@@ -9,25 +9,23 @@ import { saveCsv, preview, contactsToClipboard } from './handle.js';
 const setButtons = setInterval( () => {
     
     if(!document.getElementById('btnDown')){
-        
-        const btnMais = document.querySelectorAll('._2Z4DV._25uA8');
-       
-
+        const btnMais = document.querySelectorAll('._2nY6U._3A-iD');
         const content =  btnMais.length > 0 ? btnMais[btnMais.length - 1] : null;
+        
         if(content){
             const [, containerBtn] = content.childNodes;
             const [containerMais] = containerBtn.childNodes;
             const [txtMais] = containerMais.childNodes;
-            const text = String(txtMais.textContent);
+            const text = String(txtMais.textContent || '');
             
+                       
             if(text.match(/mais/g)){
-                content.click();
-
+                containerBtn.click();
 
                 let i = 0;
                 let scrollDow = setInterval(()=>{
-                    // classe do container dos contatos par rolar 
-                    let box = document.querySelector('._1C2Q3._36Jt6');
+                    // classe do container dos contatos para rolar 
+                    let box = document.querySelector('.KPJpj');
                     
                     i++;
                     const height = i * 7500
@@ -44,29 +42,30 @@ const setButtons = setInterval( () => {
         }
       
         // classe do container Dados do grupo
-        const containerDadosGrupo = document.querySelectorAll('._2fGIm')[0];
-        
+        const containerDadosGrupo = document.querySelector('._1FrBz');
+       
         if(containerDadosGrupo){   
             
-            const [ , div_3vTfY ] = containerDadosGrupo.childNodes;
-            if( div_3vTfY && div_3vTfY.innerHTML && div_3vTfY.innerHTML === 'Dados do contato') return;
+            if( containerDadosGrupo.innerHTML && containerDadosGrupo.innerHTML === 'Dados do contato') return;
             
+
+            const container = document.querySelector("._1FrBz")
+            container.setAttribute("style", "display: flex; gap: 8px;");
+
             //clearInterval(getElement)
-            const button = document.createElement("div")            
-            button.addEventListener("click", saveCsv );
-            button.innerHTML = `${btnDown}`;        
-            containerDadosGrupo.appendChild(button)     
-            
+            const btnCSV = document.createElement("div")            
+            btnCSV.addEventListener("click", saveCsv );
+            btnCSV.innerHTML = `${btnDown}`;        
+            containerDadosGrupo.appendChild(btnCSV)     
+
             const divBtnPrint = document.createElement("div")            
             divBtnPrint.addEventListener("click", preview);
             divBtnPrint.innerHTML = `${btnPrt}`;
             
-            const box = document.querySelector('._2wPpw');
-           
             let i = 0;
             let scrollDow = setInterval(()=>{
                 i++;
-                let box = document.querySelector('._3Xjbn._1RHZR');
+                let box = document.querySelector('.KPJpj');
                 const height = i * 7500
                 if( box && box.scrollTo ) box.scrollTo({top: height, behavior: 'smooth'});
                
@@ -81,24 +80,26 @@ const setButtons = setInterval( () => {
         } 
     }
     
-    // classe do botão search e menu
-    const _1IeOz = document.querySelector('._1IeOz');
+    // classe do container que guarda os nome do grupo e os participantes
+    const wrapper_participantes = document.querySelector('._3e6xi');
     
-    if( _1IeOz &&  !document.getElementById('btnCopy')){
-       
-        const text = _1IeOz.innerHTML;
+
+    console.log();
+    if( wrapper_participantes &&  !document.getElementById('btnCopy')){
+  
+        const text = wrapper_participantes.innerHTML;
         if(text === 'online' || text === 'clique aqui para dados do contato')
             return;
-        
-        const container = document.querySelector('._1IeOz');
-        if(container){
-            
-            //clearInterval(getElement)
-            const div = container.firstChild;            
+    
+        if(wrapper_participantes){
+            // clearInterval(getElement)
             const button = document.createElement("div")            
             button.addEventListener("click",  contactsToClipboard )
             button.innerHTML = `${btnCopy}`;        
-            div.appendChild(button);           
+            wrapper_participantes.appendChild(button);       
+
+            // const div = wrapper_participantes.firstChild;            
+            // div.appendChild(button);           
         
         }         
     }

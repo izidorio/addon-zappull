@@ -3,8 +3,8 @@ import { setHeight } from './utils.js';
 export function nameGroup() {
     // div > span com nome do grupo
     try {
-        const span_name_group = document.querySelector('._2KQyF ._35k-1._1adfa._3-8er');
-        const title = span_name_group.textContent;
+        const span_name_group = document.querySelector('._21nHd').firstChild;
+        const title = span_name_group.innerHTML;
     
         return title.replace(/\<.*\>/gi,"");         
     } catch (error) {
@@ -33,8 +33,7 @@ export async function readGroup() {
     
         setTimeout( () => {
             // div que envolve o avatar e os dados dos participantes do grupo
-            const elements = document.querySelectorAll('._2Z4DV._25uA8');
-           
+            const elements = document.querySelectorAll('._2nY6U._3A-iD');
             let contacts = [];
 
             for (let item of elements){
@@ -95,7 +94,7 @@ export async function readGroup() {
 export function readListParticipants(){
     // div com a lista de números/nomes dos participantes do grupo
     try {
-        const classContainerParticipantes = document.querySelector('.YmixP.fKfSX');
+        const classContainerParticipantes = document.querySelector('._3e6xi');
         let title = classContainerParticipantes.textContent.replace(/,\s/gi,"\n");    
         title = title.replace(/\+55\s|\+|-/gi,"");
         return title;        
