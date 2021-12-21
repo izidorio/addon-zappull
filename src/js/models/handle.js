@@ -28,14 +28,15 @@ export async function preview(){
     
     const name = nameGroup();
     const created = dateCreatedGroup();
+
     
     readGroup().then( ( contacts ) => {
 
         contacts.sort( (a, b) => {
             return b.admin - a.admin;
         })
-
-        let html = `<title>${name}</title>${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
+        const meta = '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">';
+        let html = `${meta}<title>${name}</title>${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
         
         let cards = '';
         let i = 1;

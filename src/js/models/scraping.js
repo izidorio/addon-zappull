@@ -28,12 +28,15 @@ export function dateCreatedGroup() {
 
 export async function readGroup() {
    
-    await setHeight('9999999999px');
+    // await setHeight('9999999999px');
+    
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
             // div que envolve o avatar e os dados dos participantes do grupo
-            const elements = document.querySelectorAll('._2nY6U._3A-iD');
+            let elements = document.querySelectorAll('._2nY6U._3A-iD');
+            
+
             let contacts = [];
 
             for (let item of elements){
@@ -83,7 +86,7 @@ export async function readGroup() {
             }
             
             resolve(contacts);
-            setHeight('100%');           
+            //setHeight('100%');           
 
         }, 1500);        
                 
