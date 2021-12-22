@@ -28,19 +28,22 @@ export function dateCreatedGroup() {
 
 export async function readGroup() {
    
-    // await setHeight('9999999999px');
+    await setHeight('9999999999px', '.nBIOd.tm2tP');
     
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
             // div que envolve o avatar e os dados dos participantes do grupo
-            let elements = document.querySelectorAll('._2nY6U._3A-iD');
+            // let elements = document.querySelectorAll('._2nY6U._3A-iD');
+            let elements = document.querySelectorAll('._2nY6U');
+            console.log({elements});
             
 
             let contacts = [];
 
             for (let item of elements){
                 // wrappers: avatar e conteúdo
+                console.log({item});
                 const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
                 
                 // wrapper image < flex < div_wrapper_avatar
@@ -86,7 +89,7 @@ export async function readGroup() {
             }
             
             resolve(contacts);
-            //setHeight('100%');           
+            setHeight('100%', '.nBIOd.tm2tP');           
 
         }, 1500);        
                 
@@ -108,4 +111,4 @@ export function readListParticipants(){
 }
 
 
-  
+// _2nY6U
