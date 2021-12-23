@@ -17,13 +17,21 @@ export function nameGroup() {
 export function dateCreatedGroup() {
     try {
         // span com a data de criação do grupo   
-        const span_date_group = document.querySelector('._37Hn4._1AJnI._29Iga');
-        return span_date_group.textContent;          
+        const span_name_group = document.querySelector('._3Bg5b.VWPRY._1lF7t').firstChild;
+        return span_name_group.textContent;          
     } catch (error) {
         return 'error-data-grupo'
     }
+}
 
-
+export function getTotalMembers() {
+    try {
+        // span com a data de criação do grupo   
+        const span_name_group = document.querySelector('._3Bg5b.VWPRY._1lF7t').firstChild;
+        return span_name_group.textContent;          
+    } catch (error) {
+        return 'error-data-grupo'
+    }
 }
 
 export async function readGroup() {
@@ -34,16 +42,14 @@ export async function readGroup() {
     
         setTimeout( () => {
             // div que envolve o avatar e os dados dos participantes do grupo
-            // let elements = document.querySelectorAll('._2nY6U._3A-iD');
-            let elements = document.querySelectorAll('._2nY6U');
-            console.log({elements});
+            const box = document.querySelector('.nBIOd.tm2tP')
+            let elements = box.querySelectorAll('._2nY6U');
             
 
             let contacts = [];
 
             for (let item of elements){
                 // wrappers: avatar e conteúdo
-                console.log({item});
                 const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
                 
                 // wrapper image < flex < div_wrapper_avatar
@@ -111,4 +117,4 @@ export function readListParticipants(){
 }
 
 
-// _2nY6U
+// i5tg98hk f9ovudaz przvwfww gx1rr48f shdiholb phqmzxqs gtscxtjd ajgl1lbb thr4l2wc cc8mgx9x eta5aym1 d9802myq e4xiuwjv

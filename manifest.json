@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ZapPull",
-    "version": "0.5.4",
+    "version": "0.5.6",
     "description": "Extensão que baixa em .csv ou copia para a área de transferência os participantes dos Grupos do WhatsApp. https://github.com/izidorio/addon-zappull",
     "author": "Izidorio Bento <izidorio@bento.dev.br>",
     "icons": {
