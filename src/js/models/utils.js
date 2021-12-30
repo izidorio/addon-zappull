@@ -50,3 +50,20 @@ export function saveToDataFile(text, fileName){
     }, 0);   
    
 }
+
+
+const URL_API = 'https://www.portabilidadecelular.com/painel/consulta_numero.php?user=videos_chipcerto&pass=magnus&search_number=';
+export function getOperator(payload){
+    try {
+            const number =  payload.replace(/\D/g, '');
+            
+            return fetch(`${URL_API}${number}&nome`)
+                .then(response => response.text())
+                .catch(function(error) {
+                    console.log(error.message);
+                    return '';
+                });  
+        } catch (error) {
+            return '';
+    }
+}

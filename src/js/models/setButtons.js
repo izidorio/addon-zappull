@@ -1,7 +1,6 @@
 import { saveCsv, preview, contactsToClipboard } from './handle.js';
 
 const btnCopy = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /> </svg>`;
-const btnDown = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /> </svg>`
 const btnPrint = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /> </svg>`;
 const BREAK = 'add-zappull-break';
 
@@ -16,7 +15,6 @@ divBtnPrint.setAttribute('id',"btnPrt")
 divBtnPrint.setAttribute('style',"display: flex; height: 24px")             
 divBtnPrint.addEventListener("click", preview);
 divBtnPrint.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /> </svg>`;
-
 
 
 const setButtons = setInterval( () => {
@@ -63,17 +61,13 @@ const setButtons = setInterval( () => {
             
             if( containerDadosGrupo.innerHTML && containerDadosGrupo.innerHTML === 'Dados do contato') return;
  
-                       
             const ctlBreak = document.createElement("div")
             ctlBreak.setAttribute("id", BREAK);
             containerDadosGrupo.appendChild(ctlBreak)
-
             
             containerDadosGrupo.setAttribute("style", "display: flex; gap: 8px;");
 
             //clearInterval(getElement)
-
-            
             
             // controlar a quantidade de inscritos no grupo
             const [subscribs] =  document.querySelectorAll('.i5tg98hk.f9ovudaz.przvwfww.gx1rr48f.shdiholb.phqmzxqs.gtscxtjd.ajgl1lbb.thr4l2wc.cc8mgx9x.eta5aym1.d9802myq.e4xiuwjv');
@@ -83,8 +77,8 @@ const setButtons = setInterval( () => {
                 const countSubscrib = + subscribs.innerText.replace(/\D/g, '');
 
                 if(countSubscrib < 11){
-                    containerDadosGrupo.appendChild(divBtnCSV)  
                     containerDadosGrupo.appendChild(divBtnPrint)
+                    containerDadosGrupo.appendChild(divBtnCSV)  
                 }else{
                     linkSeeAll.click();
                 }
@@ -98,7 +92,6 @@ const setButtons = setInterval( () => {
     
     // classe do container que guarda os nome do grupo e os participantes
     const wrapper_participantes = document.querySelector('._3e6xi');
-    
 
     if( wrapper_participantes &&  !document.getElementById('btnCopy')){
   
@@ -114,7 +107,7 @@ const setButtons = setInterval( () => {
             button.setAttribute('style',"display: flex; height: 18px")             
             button.addEventListener("click",  contactsToClipboard )
             button.innerHTML = `${btnCopy}`;        
-            wrapper_participantes.appendChild(button);       
+            wrapper_participantes.appendChild(button);
 
             // const div = wrapper_participantes.firstChild;            
             // div.appendChild(button);           
@@ -122,15 +115,16 @@ const setButtons = setInterval( () => {
         }         
     }
 
-    // moda
+    // modal
     const header = document.querySelector('header.-bGGW');
     if(header && !document.getElementById('btnPrtModal')){
         const button = document.createElement("div")
         button.setAttribute('id',"btnPrtModal") 
-        button.setAttribute('style',"display: flex; height: 24px; margin-left: -25px; cursor: pointer") 
+        button.setAttribute('style',"display: flex; height: 24px; margin:0 5px 0 -65px; cursor: pointer") 
         button.addEventListener("click", preview);
         button.innerHTML = `${btnPrint}`;        
-        header.appendChild(button);  
+        header.appendChild(button);
+        header.appendChild(divBtnCSV);    
     }
     
     
