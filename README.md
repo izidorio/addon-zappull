@@ -13,7 +13,7 @@ Uma extensão para o navegador Chrome que adiciona funções no  WhatsApp Web qu
     2.2 no windows clicar com o botão direito e selecionar a opção `extrair tudo` para descompactar o arquivo.
     ![](./common/05.png)
 
-3. Abra o navegador Chrome, na barra de endereço, cole o endereço: [chrome://extensions/](chrome://extensions/) para abrir o gerenciador de extensões do Chrome.
+3. Abra o navegador Chrome, na barra de endereço, cole o endereço: `chrome://extensions/` para abrir o gerenciador de extensões do Chrome.
 
 4. Habilite o Modo do desenvolvedor.
 
