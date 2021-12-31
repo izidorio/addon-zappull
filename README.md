@@ -1,12 +1,12 @@
 # Zap Pull
 Uma extensão para o navegador Chrome que adiciona funções no  WhatsApp Web que permite: 
-* Exportar em .csv dos participantes dos grupos;
-* Copiar os participantes do grupo para a área de transferência; e
-* Monta um preview com as imagens e dados dos participantes e do grupo para impressão.
+* Exportar em .csv os participantes dos grupos;
+* Copiar os participantes para a área de transferência; e
+* Montar um preview com as imagens, dados dos participantes e do grupo para impressão.
 
 ### Para instalar a extensão
 
-1. Baixe o arquivo [addon-zappul.zip clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.6.0/addon-zappull.zip)
+1. Baixe o arquivo `addon-zappul.zip` [clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.6.0/addon-zappull.zip)
 
 2. Descompacte o arquivo baixado `addon-zappull.zip`.
 
@@ -21,7 +21,7 @@ Uma extensão para o navegador Chrome que adiciona funções no  WhatsApp Web qu
 
 ![](./common/01.png)
 
-6. Se tudo ocorreu bem você verá o card da Extensão instalada.
+6. Se tudo ocorrer bem você verá o card da Extensão instalada.
 
 ![](./common/02.png)<br>
 

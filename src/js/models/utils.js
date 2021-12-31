@@ -52,18 +52,53 @@ export function saveToDataFile(text, fileName){
 }
 
 
-const URL_API = 'https://www.portabilidadecelular.com/painel/consulta_numero.php?user=videos_chipcerto&pass=magnus&search_number=';
-export function getOperator(payload){
-    try {
-            const number =  payload.replace(/\D/g, '');
+async function filterNumbers(payload){
+    const numbers = [];
+
+    for (let item of payload){
+        try {
+            const number = item.number.replace(/\D/g,'')
+            if(number !== '') numbers.push(number);
             
-            return fetch(`${URL_API}${number}&nome`)
-                .then(response => response.text())
+        } catch (error) {
+            console.log({error});
+        }
+    }
+
+    return numbers;
+   
+}
+
+const USER = '';
+const PASS = '';
+const URL_API = `https://portabilidadecelular.com/painel/consulta_numero_json.php?user=${USER}&pass=${PASS}&numeros=`;
+const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    mode: "no-cors"
+}
+export async function addOperatorToNumbers(payload){
+    try {
+            const numbers = await filterNumbers(payload)   
+            
+            console.log({numbers});
+            console.log(encodeURI(`${URL_API}[${numbers}]`));
+
+            return fetch(encodeURI(`${URL_API}[${numbers}]`), options)
+                .then(resp => {
+                    console.log('resp',resp);
+                    
+                })
                 .catch(function(error) {
                     console.log(error.message);
                     return '';
                 });  
+
+            return ''
         } catch (error) {
             return '';
     }
 }
+

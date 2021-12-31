@@ -1,4 +1,4 @@
-import { setHeight, getOperator } from './utils.js';
+import { setHeight } from './utils.js';
 
 export function nameGroup() {
     // div > span com nome do grupo
