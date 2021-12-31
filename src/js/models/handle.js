@@ -1,12 +1,12 @@
 import { readGroup, dateCreatedGroup, nameGroup, readListParticipants } from './scraping.js';
-import { saveToDataFile, copyToClipboard } from './utils.js';
+import { saveToDataFile, copyToClipboard, addOperatorToNumbers } from './utils.js';
 import { style, card, container } from './template.js';
 
 export async function saveCsv(){
 
     const nameFile = nameGroup();
    
-    readGroup().then( ( contacts ) => {
+    readGroup().then(  ( contacts ) => {
         
         contacts.sort( (a, b) => {
             return b.admin - a.admin;
@@ -18,6 +18,8 @@ export async function saveCsv(){
             const sanitize = `${contact.number};${admin};${contact.status};${contact.name}\n`;
             return sanitize.replace(/\,|\'|\"|\“|\”/g,"");            
         }).join('');
+
+    
 
         saveToDataFile(csv, nameFile || 'grupo');
     });
@@ -35,11 +37,11 @@ export async function preview(){
         contacts.sort( (a, b) => {
             return b.admin - a.admin;
         })
-        const meta = '<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">';
-        let html = `${meta}<title>${name}</title>${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
         
+        let html = `<title>${name}</title>${style}<h2>${name} (${contacts.length} participantes, <small>${created}</small>)</h2>`; 
         let cards = '';
         let i = 1;
+        
         for( let contact of contacts){
             
             cards += card(contact)

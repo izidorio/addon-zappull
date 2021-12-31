@@ -45,9 +45,9 @@ export async function readGroup() {
             const box = document.querySelector('.nBIOd.tm2tP')
             let elements = box.querySelectorAll('._2nY6U');
             
-
             let contacts = [];
 
+           
             for (let item of elements){
                 // wrappers: avatar e conteúdo
                 const [div_wrapper_avatar, div_wrapper_content] = item.childNodes;
@@ -77,12 +77,12 @@ export async function readGroup() {
                 try {
                     src = img.src.replace('t=s','t=l');      
                 } catch (error) {
-                  
+                    
                 }
-             
+                
                 
                 let number = span_phone.textContent || '';
-                number = (typeof number === 'string') ?  number.replace(/\+55\s|\+|-/g,"") : '';                     
+                number = (typeof number === 'string') ? number.replace(/\+55\s|\+|-/g,"") : '';                     
                 
                 contacts.push({
                     number,
@@ -93,6 +93,7 @@ export async function readGroup() {
                 }) 
         
             }
+           
             
             resolve(contacts);
             setHeight('100%', '.nBIOd.tm2tP');           
@@ -115,6 +116,3 @@ export function readListParticipants(){
     }
 
 }
-
-
-// i5tg98hk f9ovudaz przvwfww gx1rr48f shdiholb phqmzxqs gtscxtjd ajgl1lbb thr4l2wc cc8mgx9x eta5aym1 d9802myq e4xiuwjv

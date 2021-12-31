@@ -8,7 +8,7 @@ export function card( contact ){
 
     return `<div class="content">
                 <img src="${url}" />
-                <div class="info">
+                <div class="info" data-number="${contact.number}">
                     <p>${contact.number}${admin}</p>
                     <p>${contact.name}</p>
                     <p>${contact.status}</p>

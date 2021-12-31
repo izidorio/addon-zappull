@@ -50,3 +50,55 @@ export function saveToDataFile(text, fileName){
     }, 0);   
    
 }
+
+
+async function filterNumbers(payload){
+    const numbers = [];
+
+    for (let item of payload){
+        try {
+            const number = item.number.replace(/\D/g,'')
+            if(number !== '') numbers.push(number);
+            
+        } catch (error) {
+            console.log({error});
+        }
+    }
+
+    return numbers;
+   
+}
+
+const USER = '';
+const PASS = '';
+const URL_API = `https://portabilidadecelular.com/painel/consulta_numero_json.php?user=${USER}&pass=${PASS}&numeros=`;
+const options = {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    mode: "no-cors"
+}
+export async function addOperatorToNumbers(payload){
+    try {
+            const numbers = await filterNumbers(payload)   
+            
+            console.log({numbers});
+            console.log(encodeURI(`${URL_API}[${numbers}]`));
+
+            return fetch(encodeURI(`${URL_API}[${numbers}]`), options)
+                .then(resp => {
+                    console.log('resp',resp);
+                    
+                })
+                .catch(function(error) {
+                    console.log(error.message);
+                    return '';
+                });  
+
+            return ''
+        } catch (error) {
+            return '';
+    }
+}
+
