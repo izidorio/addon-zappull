@@ -1,0 +1,13 @@
+@user = videos_chipcerto
+@password = magnus
+@numeros = https://portabilidadecelular.com/painel/consulta_numero_json.php?user={{user}}&pass={{password}}&numeros=
+@numero = https://www.portabilidadecelular.com/painel/consulta_numero.php?user={{user}}&pass={{password}}&search_number=
+
+###
+GET {{numeros}}[21964276349, 2196272705]
+
+###
+GET {{numero}}21964276349&nome
+
+###
+GET https://www.portabilidadecelular.com/painel/consulta_numero.php?user=videos_chipcerto&pass=magnus&credito
