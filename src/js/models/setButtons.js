@@ -76,7 +76,7 @@ const setButtons = setInterval( () => {
             try {
                 const countSubscrib = + subscribs.innerText.replace(/\D/g, '');
 
-                if(countSubscrib < 11){
+                if(countSubscrib < 19){
                     containerDadosGrupo.appendChild(divBtnPrint)
                     containerDadosGrupo.appendChild(divBtnCSV)  
                 }else{

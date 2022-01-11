@@ -36,13 +36,15 @@ export function getTotalMembers() {
 
 export async function readGroup() {
    
-    await setHeight('9999999999px', '.nBIOd.tm2tP');
+    //g6kkip0l p357zi0d f8m0rgwh ppled2lx tkdu00h0 gfz4du6o r7fjleex jv8uhy2r lhggkp7q qq0sjtgm ln8gz9je tm2tP copyable-area
+    const WRAPPER_SUBSCRIBS = '.ln8gz9je.tm2tP.copyable-area'; 
+    await setHeight('9999999999px', WRAPPER_SUBSCRIBS);
     
     return new Promise( async ( resolve ) => {
     
         setTimeout( () => {
             // div que envolve o avatar e os dados dos participantes do grupo
-            const box = document.querySelector('.nBIOd.tm2tP')
+            const box = document.querySelector(WRAPPER_SUBSCRIBS)
             let elements = box.querySelectorAll('._2nY6U');
             
             let contacts = [];
