@@ -6,7 +6,7 @@ Uma extensão para o navegador Chrome que adiciona funções no  WhatsApp Web qu
 
 ### Para instalar a extensão
 
-1. Baixe o arquivo `addon-zappul.zip` [clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.6.0/addon-zappull.zip)
+1. Baixe o arquivo `addon-zappul.zip` [clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/0.6.1/addon-zappull.zip)
 
 2. Descompacte o arquivo baixado `addon-zappull.zip`.
 
