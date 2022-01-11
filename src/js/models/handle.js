@@ -19,8 +19,6 @@ export async function saveCsv(){
             return sanitize.replace(/\,|\'|\"|\“|\”/g,"");            
         }).join('');
 
-    
-
         saveToDataFile(csv, nameFile || 'grupo');
     });
     

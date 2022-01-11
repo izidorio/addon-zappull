@@ -75,30 +75,35 @@ const URL_API = `https://portabilidadecelular.com/painel/consulta_numero_json.ph
 const options = {
     method: 'GET',
     headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
     },
     mode: "no-cors"
 }
 export async function addOperatorToNumbers(payload){
-    try {
+    
             const numbers = await filterNumbers(payload)   
             
             console.log({numbers});
             console.log(encodeURI(`${URL_API}[${numbers}]`));
 
-            return fetch(encodeURI(`${URL_API}[${numbers}]`), options)
-                .then(resp => {
-                    console.log('resp',resp);
-                    
+            fetch(encodeURI(`${URL_API}[${numbers}]`), options)
+                .then(function(response) {
+                    var contentType = response.headers.get("content-type");
+                    console.log(response);
+                    if(contentType && contentType.indexOf("application/json") !== -1) {
+                    return response.json().then(function(json) {
+                        // process your JSON further
+                        console.log(json);
+                    });
+                    } else {
+                        console.log("Oops, we haven't got JSON!");
+                    }
                 })
                 .catch(function(error) {
-                    console.log(error.message);
-                    return '';
-                });  
-
-            return ''
-        } catch (error) {
-            return '';
-    }
+                    console.log(error);
+                });
+        
+   
 }
 

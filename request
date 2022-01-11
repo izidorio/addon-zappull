@@ -11,3 +11,6 @@ GET {{numero}}21964276349&nome
 
 ###
 GET https://www.portabilidadecelular.com/painel/consulta_numero.php?user=videos_chipcerto&pass=magnus&credito
+
+###
+GET https://portabilidadecelular.com/painel/consulta_numero_json.php?user=videos_chipcerto&pass=magnus&numeros=%5B21999923314,21979508500,21969303210,21964237055,21964111206%5D
