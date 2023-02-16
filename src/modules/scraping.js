@@ -33,15 +33,18 @@ export function getTotalMembers() {
 }
 
 export async function readGroup() {
-  //g6kkip0l p357zi0d f8m0rgwh ppled2lx tkdu00h0 gfz4du6o r7fjleex jv8uhy2r lhggkp7q qq0sjtgm ln8gz9je tm2tP copyable-area
-  const WRAPPER_SUBSCRIBS = ".ln8gz9je.tm2tP.copyable-area";
+  //g6kkip0l p357zi0d f8m0rgwh ppled2lx tkdu00h0 gfz4du6o r7fjleex jv8uhy2r lhggkp7q qq0sjtgm ln8gz9je _3cjY2 copyable-area
+
+  // div que envolve o avatar e os dados dos participantes do grupo
+  const WRAPPER_SUBSCRIBS = "._3cjY2.copyable-area";
   await setHeight("9999999999px", WRAPPER_SUBSCRIBS);
 
   return new Promise(async (resolve) => {
     setTimeout(() => {
+      const box = document.querySelector("._3YS_f._2A1R8");
+
       // div que envolve o avatar e os dados dos participantes do grupo
-      const box = document.querySelector(WRAPPER_SUBSCRIBS);
-      let elements = box.querySelectorAll("._2nY6U");
+      let elements = box.querySelectorAll("._199zF._3j691");
 
       let contacts = [];
 
@@ -98,7 +101,9 @@ export async function readGroup() {
 export function readListParticipants() {
   // div com a lista de números/nomes dos participantes do grupo
   try {
-    const classContainerParticipantes = document.querySelector("._3e6xi");
+    const classContainerParticipantes = document.querySelector(
+      "div[data-testid='chat-subtitle']"
+    ).firstChild;
     let title = classContainerParticipantes.textContent.replace(/,\s/gi, "\n");
     title = title.replace(/\+55\s|\+|-/gi, "");
     return title;
