@@ -54,7 +54,10 @@ const setButtons = setInterval(() => {
     const containerDadosGrupo = document.querySelector("._1FrBz");
 
     if (containerDadosGrupo) {
-      if (containerDadosGrupo.innerHTML && containerDadosGrupo.innerHTML === "Dados do contato")
+      if (
+        containerDadosGrupo.innerHTML &&
+        containerDadosGrupo.innerHTML === "Dados do contato"
+      )
         return;
 
       const ctlBreak = document.createElement("div");
@@ -114,7 +117,7 @@ const setButtons = setInterval(() => {
   }
 
   // modal
-  const header = document.querySelector("header.-bGGW");
+  const header = document.querySelector("header._24ZCu");
   if (header && !document.getElementById("btnPrtModal")) {
     const button = document.createElement("div");
     button.setAttribute("id", "btnPrtModal");
