@@ -117,7 +117,7 @@ const setButtons = setInterval(() => {
   }
 
   // modal
-  const header = document.querySelector("header._24ZCu");
+  const header = document.querySelector("header.boajuire");
   if (header && !document.getElementById("btnPrtModal")) {
     const button = document.createElement("div");
     button.setAttribute("id", "btnPrtModal");
