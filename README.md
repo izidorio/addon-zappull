@@ -8,6 +8,8 @@ Uma extensão para o navegador Chrome que adiciona funções no WhatsApp Web que
 
 ### Para instalar a extensão
 
+0. Consulte a versão do WhatsApp para verificar a compatibilidade com a versão da sua extensão Zap Pull.
+   ![](./common/06.png)
 1. Baixe o arquivo `addon-zappul.zip` [clicando aqui neste link](https://github.com/izidorio/addon-zappull/releases/download/1.0.1/addon-zappull.zip)
 
 2. Descompacte o arquivo baixado `addon-zappull.zip`.

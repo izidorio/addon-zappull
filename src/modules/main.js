@@ -117,7 +117,11 @@ const setButtons = setInterval(() => {
   }
 
   // modal
-  const header = document.querySelector("header.boajuire");
+
+  // const header = document.querySelector("header.boajuire");
+  const divModal = document.querySelector("div[data-testid='popup-contents']");
+  const header = divModal.querySelector("header");
+
   if (header && !document.getElementById("btnPrtModal")) {
     const button = document.createElement("div");
     button.setAttribute("id", "btnPrtModal");
