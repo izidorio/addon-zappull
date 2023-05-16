@@ -23,11 +23,7 @@ Uma extensão para o navegador Chrome que adiciona funções no WhatsApp Web que
 
 ![](./common/01.png)
 
-6. Se tudo ocorrer bem você verá o card da Extensão instalada.
-
-![](./common/02.png)<br>
-
-7. Consulte a versão do WhatsApp para verificar a compatibilidade da extensão Zap Pull instalada.
+6. Consulte a versão do WhatsApp para verificar a compatibilidade da extensão Zap Pull instalada.
    ![](./common/06.png)
 
 ### Como utilizar
