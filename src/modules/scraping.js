@@ -3,8 +3,10 @@ import { setHeight } from "./utils.js";
 export function nameGroup() {
   // div > span com nome do grupo
   try {
-    const span_name_group = document.querySelector("._21nHd").firstChild;
-    const title = span_name_group.innerHTML;
+    const span_name_group = document.querySelector(
+      "span[data-testid='conversation-info-header-chat-title']"
+    );
+    const title = span_name_group.innerText;
 
     return title.replace(/\<.*\>/gi, "");
   } catch (error) {
@@ -15,7 +17,9 @@ export function nameGroup() {
 export function dateCreatedGroup() {
   try {
     // span com a data de criação do grupo
-    const span_name_group = document.querySelector("._3Bg5b.VWPRY._1lF7t").firstChild;
+    const span_name_group = document.querySelector(
+      ".f8jlpxt4.e4qy2s3t.pm5hny62.e1gr2w1z"
+    ).firstChild;
     return span_name_group.textContent;
   } catch (error) {
     return "error-data-grupo";
@@ -25,7 +29,9 @@ export function dateCreatedGroup() {
 export function getTotalMembers() {
   try {
     // span com a data de criação do grupo
-    const span_name_group = document.querySelector("._3Bg5b.VWPRY._1lF7t").firstChild;
+    const span_name_group = document.querySelector(
+      "._3Bg5b.VWPRY._1lF7t"
+    ).firstChild;
     return span_name_group.textContent;
   } catch (error) {
     return "error-data-grupo";
@@ -58,7 +64,8 @@ export async function readGroup() {
         const [img] = div_wrapper_rondend.childNodes;
 
         // wrappers das linhas < div_wrapper_content
-        const [div_wrapper_title, div_wrapper_status] = div_wrapper_content.childNodes;
+        const [div_wrapper_title, div_wrapper_status] =
+          div_wrapper_content.childNodes;
 
         // wrappers: nome administrador
         const [span_phone, span_status] = div_wrapper_title.childNodes;
@@ -81,7 +88,8 @@ export async function readGroup() {
         } catch (error) {}
 
         let number = span_phone.textContent || "";
-        number = typeof number === "string" ? number.replace(/\+55\s|\+|-/g, "") : "";
+        number =
+          typeof number === "string" ? number.replace(/\+55\s|\+|-/g, "") : "";
 
         contacts.push({
           number,

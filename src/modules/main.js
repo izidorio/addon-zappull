@@ -91,7 +91,7 @@ const setButtons = setInterval(() => {
     }
   }
 
-  // classe do container que guarda os nome do grupo e os participantes
+  // classe do container que guarda os participantes
   const wrapper_participantes = document.querySelector(
     "div[data-testid='chat-subtitle']"
   ).firstChild;
@@ -106,7 +106,10 @@ const setButtons = setInterval(() => {
 
       const button = document.createElement("div");
       button.setAttribute("id", "btnCopy");
-      button.setAttribute("style", "display: flex; height: 18px");
+      button.setAttribute(
+        "style",
+        "display: flex; height: 18px; position: fixed; top: 30px; right: 112px;"
+      );
       button.innerHTML = `${btnCopy}`;
       button.addEventListener("click", contactsToClipboard);
       wrapper_participantes.appendChild(button);

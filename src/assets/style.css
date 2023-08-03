@@ -1,11 +1,11 @@
 #btnCopy,
 #btnPrt,
 #btnDown {
-    cursor: pointer;
-    margin-left: 5px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 #btnCopy:hover,
 #btnPrt:hover,
-#btnDown:hover{
-    transform: scale(1.1);
+#btnDown:hover {
+  transform: scale(1.1);
 }
