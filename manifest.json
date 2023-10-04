@@ -1,7 +1,7 @@
 {
   "name": "ZapPull",
-  "description": "Compatível com a Versão 2.2332.12 Exportar os participantes dos Grupos do WhatsApp. https://github.com/izidorio/addon-zappull",
-  "version": "1.0.4",
+  "description": "Compatível com a Versão 2.2343.52 Exportar os participantes dos Grupos do WhatsApp. https://github.com/izidorio/addon-zappull",
+  "version": "1.0.5",
   "manifest_version": 3,
   "author": "Bento, Izidorio <contato@bento.dev.br>",
   "permissions": ["activeTab", "scripting", "storage"],
