@@ -15,7 +15,7 @@ export function setHeight(size, filter = ".ldL67._1bLj8") {
   });
 }
 
-export function copyToClipboard(text) {
+export function _copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(
     function () {
       alert(
@@ -29,6 +29,35 @@ export function copyToClipboard(text) {
       console.error("Async: Could not copy text: ", err);
     }
   );
+}
+
+export function copyToClipboard(text) {
+  // Crie um elemento <textarea> temporário
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+
+  // Defina o estilo para torná-lo invisível
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+
+  // Anexe o elemento ao corpo do documento
+  document.body.appendChild(textarea);
+
+  // Selecione o conteúdo do <textarea>
+  textarea.select();
+
+  // Execute o comando de cópia
+  document.execCommand("copy");
+
+  // Remova o elemento <textarea> temporário
+  document.body.removeChild(textarea);
+
+  // Exiba uma mensagem de sucesso ou erro
+  if (document.queryCommandSupported("copy")) {
+    alert("Texto copiado para a área de transferência!");
+  } else {
+    alert("Seu navegador não suporta a cópia para a área de transferência.");
+  }
 }
 
 export function saveToDataFile(text, fileName) {

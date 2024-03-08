@@ -1,5 +1,5 @@
 import { saveCsv, preview, contactsToClipboard } from "./handle.js";
-import { WRAPPER_PARTICIPANTES, DIV_MODAL } from "./_constants.js";
+import { HEADER_MODAL_PARTICIPANTES, WRAPPER_PARTICIPANTES, DIV_MODAL } from "./_constants.js";
 
 const btnCopy = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /> </svg>`;
 const btnPrint = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /> </svg>`;
@@ -34,7 +34,10 @@ const setButtons = setInterval(() => {
         let i = 0;
         let scrollDow = setInterval(() => {
           // classe do container dos contatos para rolar
-          let box = document.querySelector(".KPJpj");
+
+          let box = document.querySelector(
+            ".g0rxnol2.g0rxnol2.thghmljt.p357zi0d.rjo8vgbg.ggj6brxn.f8m0rgwh.gfz4du6o.ag5g9lrv.bs7a17vp.ov67bkzj"
+          );
 
           i++;
           const height = i * 7500;
@@ -52,7 +55,9 @@ const setButtons = setInterval(() => {
     }
 
     // classe do container Dados do grupo
-    const containerDadosGrupo = document.querySelector("._1FrBz");
+
+    // const containerDadosGrupo = document.querySelector("._1FrBz");
+    const containerDadosGrupo = document.querySelector(HEADER_MODAL_PARTICIPANTES);
 
     if (containerDadosGrupo) {
       if (containerDadosGrupo.innerHTML && containerDadosGrupo.innerHTML === "Dados do contato")
@@ -62,7 +67,7 @@ const setButtons = setInterval(() => {
       ctlBreak.setAttribute("id", BREAK);
       containerDadosGrupo.appendChild(ctlBreak);
 
-      containerDadosGrupo.setAttribute("style", "display: flex; gap: 8px;");
+      containerDadosGrupo.setAttribute("style", "display: flex;");
 
       //clearInterval(getElement)
 
