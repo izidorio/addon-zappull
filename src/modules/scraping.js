@@ -106,6 +106,8 @@ export function readListParticipants() {
   // div com a lista de números/nomes dos participantes do grupo
   try {
     const classContainerParticipantes = document.querySelector(WRAPPER_PARTICIPANTES).firstChild;
+
+    console.log(classContainerParticipantes);
     let title = classContainerParticipantes.textContent.replace(/,\s/gi, "\n");
     title = title.replace(/\+55\s|\+|-/gi, "");
     return title;

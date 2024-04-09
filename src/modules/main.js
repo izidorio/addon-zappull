@@ -96,7 +96,7 @@ const setButtons = setInterval(() => {
 
   // classe do container que guarda os participantes "div[data-testid='chat-subtitle']"
   const wrapper_participantes = document.querySelector(WRAPPER_PARTICIPANTES).firstChild;
-
+  console.log(wrapper_participantes);
   //p357zi0d r15c9g6i g4oj0cdv ovllcyds l0vqccxk pm5hny62
 
   if (wrapper_participantes && !document.getElementById("btnCopy")) {
@@ -121,8 +121,6 @@ const setButtons = setInterval(() => {
       // div.appendChild(button);
     }
   }
-
-  // modal
 
   // const header = document.querySelector("header.boajuire");
   const divModal = document.querySelector(DIV_MODAL);

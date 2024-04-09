@@ -1,25 +1,23 @@
-// exemplo de busca por atributo
-// document.querySelector("div[data-testid='chat-subtitle']").firstChild;
-
 // classe do container que guarda os participantes (abaixo do nome do grupo)
-
 export const HEADER_MODAL_PARTICIPANTES =
-  ".cm280p3y.p357zi0d.kk3akd72.gndfcl4n.m0jbzij3.i5tg98hk.iffbo4e8.przvwfww.hmkl5ysc.dmous0d2.gulicvea.boajuire.o93wvyfv";
+  ".x9f619.x78zum5.x1okw0bk.x6s0dn4.xdiz9cm.xexx8yu.xc73u3c.x18d9i69.x9mfa4r.xoj7uri.x11doyns.x1npaq5j.x1c83p5e";
 
 // classe do container que guarda os participantes (abaixo do nome do grupo)
-export const WRAPPER_PARTICIPANTES = ".p357zi0d.r15c9g6i.g4oj0cdv.ovllcyds.l0vqccxk.pm5hny62";
+export const WRAPPER_PARTICIPANTES = ".x78zum5.x1cy8zhl.xisnujt.x1nxh6w3.xcgms0a.x16cd2qt";
 
 // classe do header do modal dos participantes
-export const DIV_MODAL = "._3cjY2.copyable-area";
+export const DIV_MODAL =
+  ".x15g3fpr.x78zum5.xdt5ytf.x5yr21d.x17qophe.x6ikm8r.x10wlt62.x67bb7w.x10l6tqk.x13vifvy.xh8yej3._ahmw.copyable-area";
 
 // div dentro do modal que envolve o avatar e os dados dos participantes do grupo
-export const WRAPPER_CARD_PARTICIPANTES = ".o9i7y497.g0rxnol2.gfz4du6o.r7fjleex";
+export const WRAPPER_CARD_PARTICIPANTES =
+  ".x1n2onr6.x1n2onr6.xyw6214.x78zum5.x1r8uery.x1iyjqo2.xdt5ytf.x6ikm8r.x1odjw0f.x1hc1fzr.x1tkvqr7";
 
 // div que envolve card com o avatar e os dados dos participantes
-export const CARD_PARTICIPANTE = "._199zF._3j691";
+export const CARD_PARTICIPANTE = "._ak72._ak73";
 
 // classe do span do nome dos grupo
-export const NM_GRUPO = "span[class='f804f6gw ln8gz9je']";
+export const NM_GRUPO = "span[class='x1lliihq xh8yej3']";
 
 // classe do span do nome dos grupo
-export const DT_CREATE_GRUPO = ".f8jlpxt4.e4qy2s3t.pm5hny62.e1gr2w1z";
+export const DT_CREATE_GRUPO = ".x1f6kntn.x16h55sf.x1fcty0u.x1rw0npd";
