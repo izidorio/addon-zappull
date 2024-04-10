@@ -48,6 +48,7 @@ export async function preview() {
     html += container(cards);
 
     const previewPage = window.open("about:blank");
+    console.log("preview");
     previewPage.document.write(html);
   });
 }
