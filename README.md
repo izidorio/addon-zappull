@@ -1,3 +1,15 @@
+# Esse projeto foi descontinuado siga o novo projeto no repositório a baixo.
+
+https://github.com/izidorio/zappull
+
+
+
+
+
+
+
+
+
 # Zap Pull
 
 Uma extensão para o navegador Chrome que adiciona funções no WhatsApp Web que permite:
