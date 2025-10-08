@@ -1,16 +1,13 @@
-# Esse projeto foi descontinuado siga o novo projeto no repositório a baixo.
+# ⚠️ Projeto Descontinuado
+Este projeto foi descontinuado e **não receberá mais atualizações**. Sinta-se à vontade para explorar o código, mas não recomendamos seu uso em produção.
 
-https://github.com/izidorio/zappull
-
-
-
+Esse projeto foi descontinuado siga o novo projeto no repositório https://github.com/izidorio/zappull
 
 
 
 
-
-
-# Zap Pull
+----------------------------------------------------------------------
+### Zap Pull
 
 Uma extensão para o navegador Chrome que adiciona funções no WhatsApp Web que permite:
 
